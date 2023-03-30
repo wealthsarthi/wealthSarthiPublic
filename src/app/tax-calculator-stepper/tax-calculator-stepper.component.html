@@ -1,0 +1,203 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Tax Calculator</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+             <li class="breadcrumb-item">Pages</li>
+             <li class="breadcrumb-item active">Blank</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section">
+    <div style="width: 100%; text-align: left;">
+       <div class="row-g-6">
+          <div class="col-lg-6" style="width: 100%;">
+             <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Income & Deductions</h1>
+                     <mat-horizontal-stepper [linear]="isLinear" #stepper >
+                         <mat-step label="Income">
+                            <form >
+                             <!--<ng-template matStepLabel>Income</ng-template>-->
+                                 <div class="formDesign">
+                                    <div>
+                                     <mat-form-field class="formWidth"><br>
+                                        <mat-label>Enter your gross salary income:</mat-label>
+                                         <input matInput type="number" name="a" [(ngModel)]="grossincome">
+                                     </mat-form-field>
+                                 </div>
+                                 <div >
+                                     <mat-form-field class="formWidth"><br>
+                                         <mat-label>Annual income from other sources:</mat-label>
+                                         <input type="number" matInput [(ngModel)]="othersource" name="b">
+                                     </mat-form-field>
+                                 </div>
+                                 <div >
+                                     <mat-form-field class="formWidth"><br>
+                                         <mat-label>Home loan interest payment:</mat-label>
+                                         <input type="number" matInput [(ngModel)]="homeloan" name="c">
+                                     </mat-form-field>
+                                 </div>
+                                 </div>
+                                 <div class="text-center">
+                                     <button mat-raised-button color="primary" matStepperNext>Next</button>
+                                 </div>
+                            </form>
+                         </mat-step>
+
+                         <mat-step label="Deductions">
+                            <form >
+                             <!--<ng-template matStepLabel>Deductions</ng-template>-->
+                                 <div class="formDesign">
+                                    <div>
+                                     <mat-form-field class="formWidth"><br>
+                                         <mat-label>Basic deduction from 80C:</mat-label>
+                                         <input type="number" matInput [(ngModel)]="basicded" name="d">
+                                     </mat-form-field>
+                                 </div>
+                                 <div >
+                                     <mat-form-field class="formWidth"><br>
+                                         <mat-label>Medical Insurance Premium 80D:</mat-label>
+                                         <input type="number" matInput [(ngModel)]="medinsurance" name="e">
+                                     </mat-form-field>
+                                 </div>
+                                 <div >
+                                     <mat-form-field class="formWidth"><br>
+                                         <mat-label>Contribution from NPS 80CCD(1B):</mat-label>
+                                         <input type="number" matInput [(ngModel)]="nps" name="f">
+                                     </mat-form-field>
+                                 </div>
+                                 <div >
+                                     <mat-form-field class="formWidth"><br>
+                                         <mat-label>Donation to Charity 80G:</mat-label>
+                                         <input type="number" matInput [(ngModel)]="charity" name="g">
+                                     </mat-form-field>
+                                 </div>
+                                 <div >
+                                     <mat-form-field class="formWidth"><br>
+                                         <mat-label>Interest on Education Loan 80E:</mat-label>
+                                         <input type="number" matInput [(ngModel)]="eduloan" name="h">
+                                     </mat-form-field>
+                                 </div>
+                                 <div>
+                                     <mat-form-field class="formWidth"><br>
+                                         <mat-label>Interest on deposits in savings account 80TTA/80TTB:</mat-label>
+                                         <input type="number" matInput [(ngModel)]="savings" name="i">
+                                     </mat-form-field>
+                                 </div>
+                                 </div>
+                                 <div class="text-center">
+                                     <button mat-raised-button color="primary" style="margin-left: 10px;" matStepperPrevious>Back</button>&nbsp;&nbsp;
+                                     <button mat-raised-button color="primary" style="margin-right: 10px;" matStepperNext>Next</button>
+                                 </div>
+                            </form>
+                         </mat-step>
+                         <mat-step label="HRA Exemption">
+                            <form >
+                             <!--<ng-template matStepLabel>HRA Exemptions</ng-template>-->
+                                 <div class="formDesign">
+                                    <div>
+                                     <mat-form-field class="formWidth"><br>
+                                         <mat-label>Basic salary received per annum:</mat-label>
+                                         <input type="number" matInput [(ngModel)]="salary"name="j">
+                                     </mat-form-field>
+                                 </div>
+                                 <div >
+                                    <mat-form-field class="formWidth"><br>
+                                        <mat-label>HRA Received per annum:</mat-label>
+                                        <input type="number" matInput [(ngModel)]="hra"name="k">
+                                    </mat-form-field>
+                                 </div>
+                                 <div >
+                                    <mat-form-field class="formWidth"><br>
+                                        <mat-label>Total rent paid per annum:</mat-label>
+                                        <input type="number" matInput [(ngModel)]="rent"name="l">
+                                    </mat-form-field>
+                                 </div>
+                                 <div>
+                                    <mat-form-field class="formWidth"><br>
+                                        <mat-label>Do you live in a metropolitian area?</mat-label>
+                                        <mat-select [(ngModel)]="option">  
+                                            <mat-option value = "0.5"> I live in a metropolitian area</mat-option>  
+                                            <mat-option value = "0.4"> I dont live in a metropolitian area</mat-option>  
+                                          </mat-select>
+                                    </mat-form-field>
+                                 </div>
+                                 </div>
+                                    <div class="text-center">
+                                        <button mat-raised-button color="primary" matStepperPrevious>Back</button>&nbsp;&nbsp;
+                                        <button mat-raised-button color="primary" (click)="calculateTax()">Submit</button>
+                                    </div>
+                                 </form>
+                                </mat-step>
+                      </mat-horizontal-stepper>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             </div>
+             </section>
+             <section class="section">
+              <div class="row-g-6">
+                 <div class="col-lg-6" style="width: 100%;">
+                    <div class="card">
+                       <div class="card-body">
+              <h3 class="card-title">HRA Exemptions</h3>
+              <p>HRA Exemption: {{hraexemption}}</p>
+
+               
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  
+    <section class="section">
+        <div class="row-g-6">
+          <div class="col-12">
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Tax amounts are:</h5>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                       <th></th>
+                        <th>Old Tax Regime</th>
+                        <th>New Tax Regime</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Tax Payable Income</td>
+                        <td>{{ oldtpi | currency: 'INR'  }}</td>
+                        <td>{{ newtpi | currency: 'INR' }}</td>
+                      </tr>
+                      <tr>
+                       <td>Tax calculated</td>
+                       <td>{{ oldtax | currency: 'INR' }}</td>
+                       <td>{{ newtax | currency: 'INR' }}</td>
+                     </tr>
+                    </tbody>
+                  </table>
+                  <div >
+                       <div style="text-align:center;height:500px;width:100%">
+                          <apx-chart
+                          [series]="chartOptions.series"
+                          [chart]="chartOptions.chart"
+                          [dataLabels]="chartOptions.dataLabels"
+                          [plotOptions]="chartOptions.plotOptions"
+                          [yaxis]="chartOptions.yaxis"
+                          [xaxis]="chartOptions.xaxis"
+                          [fill]="chartOptions.fill"
+                          [title]="chartOptions.title"
+                        ></apx-chart>                        
+                       </div>
+                       </div>
+                       </div>
+                    </div>
+               </div>
+            </div>
+    </section>
+  </main>
+  

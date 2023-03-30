@@ -1,0 +1,124 @@
+<div style="margin-top: 20px;">
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup" label="Personal Info">
+      <form [formGroup]="firstFormGroup">
+        <!--<ng-template matStepLabel>Personal Info</ng-template>-->
+        <div class="formDesign">
+        <mat-form-field class="formWidth"> 
+            <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="firstCtrl" placeholder="Enter Your Name" required>
+        </mat-form-field>
+      <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Birthdate</mat-label>
+          <input matInput type="date" formControlName="firstCtrl" placeholder="Enter Your Birthdate" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Monthly Income</mat-label>
+          <input matInput type="number" formControlName="firstCtrl" placeholder="Enter Your Monthly Income" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Monthly Expenses</mat-label>
+          <input matInput type="number" formControlName="firstCtrl" placeholder="Enter Your Average Monthly Expenses" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Dependent Family Member</mat-label>
+          <input matInput type="number" formControlName="firstCtrl" placeholder="Enter Number of Dependent Family Member" required>
+        </mat-form-field>
+      </div>
+    </div>
+        <div>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Stocks">
+      <form [formGroup]="secondFormGroup">
+        <!--<ng-template matStepLabel>Stocks</ng-template>-->
+        <div class="formDesign">
+        <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Stock Name</mat-label>
+          <input type="text" matInput formControlName="secondCtrl" placeholder="Enter Your Monthly Income" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Purchase Price</mat-label>
+          <input type="number" matInput formControlName="secondCtrl" placeholder="Enter Your Purchase Price" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Units</mat-label>
+          <input type="number" matInput formControlName="secondCtrl" placeholder="Enter Your Number of Stocks" required>
+        </mat-form-field>
+      </div>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>&nbsp;&nbsp;
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step label="Mutual-Funds">
+      <form [formGroup]="secondFormGroup">
+      <!--<ng-template matStepLabel>Step 3</ng-template>-->
+      <div class="formDesign">
+        <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Mutual Funds Scheme Name</mat-label>
+          <input type="text" matInput formControlName="secondCtrl" placeholder="Enter Your Mutual-Funds Scheme Name" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Purchase Price</mat-label>
+          <input type="number" matInput formControlName="secondCtrl" placeholder="Enter Your Purchase Price" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Units</mat-label>
+          <input type="number" matInput formControlName="secondCtrl" placeholder="Enter Your Number of Units Purchased" required>
+        </mat-form-field>
+      </div>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>&nbsp;&nbsp;
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+        </form>
+    </mat-step>
+    <mat-step label="Fixed-Deposit">
+      <form [formGroup]="secondFormGroup">
+      <!--<ng-template matStepLabel>Step 3</ng-template>-->
+      <div class="formDesign">
+        <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Fixed Deposit Amount</mat-label>
+          <input type="number" matInput formControlName="secondCtrl" placeholder="Enter Your Fixed Deposit Amount" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="formWidth">
+          <mat-label>Duration</mat-label>
+          <input type="number" matInput formControlName="secondCtrl" placeholder="Enter Your Duration of Deposit" required>
+        </mat-form-field>
+      </div>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>&nbsp;&nbsp;
+          <button mat-raised-button color="primary" data-bs-dismiss="modal">Finish</button>
+        </div>
+        </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

@@ -1,0 +1,92 @@
+<div class="filter">
+    <a class="icon" data-bs-toggle="dropdown"><button type="button" class="btn btn-primary rounded-pill">Update</button></a>
+    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+       <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#updateModal" ><i class=" bi bi-plus-circle" style="font-size: 18px;"></i> Manually</a></li>
+       <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#linkModal"><i class="bi bi-cloud-arrow-down-fill" style="font-size: 18px"></i>Link Your Account</a></li>
+    </ul>
+ </div>
+
+<!--update manually Modal-->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title" id="updateModalLabel">Update Manually</h2>
+     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+       <!--Add your update form or any other content here-->
+      <div class="card">
+        <div class="card-body"> 
+            <app-stepper-form></app-stepper-form> 
+       </div>
+     </div>
+    </div>
+    <!--<div class="modal-footer d-flex justify-content-center align-items-end">
+      <button type="button" class="btn btn-success">Proceed</button>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>-->
+  </div>
+</div>
+</div>
+
+
+
+<!-- Link your account Modal -->
+<div class="modal fade" id="linkModal" tabindex="-1" aria-labelledby="linkModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="linkModalLabel">Link Your Account</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <!-- Add your account linking form or any other content here -->
+      <div class="card">
+        <div class="card-body">
+           <h5 class="card-title">Link Your Account</h5>
+            <h6>Welcome to Open Banking</h6><br>
+            <h6>Link your account to manage all your accounts at one place. If you click on proceed, you will be redirected to OTP based login page from FinVU. We will search for 
+              your accounts based on your phone number. You can select your accounts that you want to track and manage and give consent to share data. If you are unable to find your accounts, use
+              the option of searching accounts based on another phone number. Once consent is provided, you will be redirected back to our dashboard.
+            </h6>
+           <!--<form class="row g-3" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+              <div class="col-md-4"> <label for="inputName5" class="form-label">First Name</label> <input type="text" class="form-control" id="inputName5"></div>
+              <div class="col-md-4"> <label for="inputName5" class="form-label">Middle Name</label> <input type="text" class="form-control" id="inputName5"></div>
+              <div class="col-md-4"> <label for="inputName5" class="form-label">Last Name</label> <input type="text" class="form-control" id="inputName5"></div>
+              <div class="col-md-6"> <label for="inputEmail5" class="form-label">Account No.</label> <input type="number" class="form-control" id="inputEmail5"></div>
+              <div class="col-md-6"> <label for="inputPassword5" class="form-label">Bank Name</label> <input type="text" class="form-control" id="inputPassword5"></div>
+              <div class="col-md-6"> <label for="inputAddress5" class="form-label">Branch</label> <input type="text" class="form-control" id="inputAddres5s" placeholder="Eg: Mumbai,Delhi"></div>
+              <div class="col-md-6"> <label for="inputAddress2" class="form-label">Linked Mobile No.</label> <input type="number" class="form-control" id="inputAddress2" placeholder="+91-92344908**"></div>
+              
+              <div class="col-md-6"> <label for="inputCity" class="form-label">City</label> <input type="text" class="form-control" id="inputCity"></div>
+              <div class="col-md-4">
+                 <label for="inputState" class="form-label">State</label>
+                 <select id="inputState" class="form-select">
+                  <option value="">Select State</option>  <option value="Andhra Pradesh">Andhra Pradesh</option> <option value="Arunachal Pradesh">Arunachal Pradesh</option> <option value="Assam">Assam</option><option value="Bihar">Bihar</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option> <option value="Goa">Goa</option> <option value="Gujarat">Gujarat</option> <option value="Haryana">Haryana</option> <option value="Himachal Pradesh">Himachal Pradesh</option> <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option> <option value="Kerala">Kerala</option><option value="Madhya Pradesh">Madhya Pradesh</option><option value="Maharashtra">Maharashtra</option><option value="Manipur">Manipur</option><option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option><option value="Odisha">Odisha</option><option value="Punjab">Punjab</option><option value="Rajasthan">Rajasthan</option> <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option><option value="Telangana">Telangana</option><option value="Tripura">Tripura</option><option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option><option value="West Bengal">West Bengal</option>
+                </select>
+              </div>
+              <div class="col-md-2"> <label for="inputZip" class="form-label">Zip</label> <input type="text" class="form-control" id="inputZip"></div>
+              <div class="col-12">
+                 <div class="form-check"> <input class="form-check-input" type="checkbox" id="gridCheck"> <label class="form-check-label" for="gridCheck"> Check me out </label></div>
+              </div>
+            
+              <div class="text-center"> <button type="submit" class="btn btn-primary">Submit</button> <button type="reset" class="btn btn-secondary">Reset</button></div>
+           </form>-->
+        </div>
+     </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-center align-items-end">
+      <button type="button" class="btn btn-success">Proceed</button>
+      <br>
+    </div>
+  </div>
+</div>
+</div>
+
+

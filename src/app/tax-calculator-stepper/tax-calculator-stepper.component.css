@@ -1,0 +1,29 @@
+.mat-vertical-stepper-header-container {
+    justify-content: center;
+}
+
+.mat-vertical-stepper-header {
+    padding: 0;
+}
+
+.mat-vertical-stepper-label {
+    flex: 1 1 auto;
+}
+
+.mat-vertical-stepper-header:last-child {
+    border-bottom: none;
+}
+
+p {
+    font-family: Lato;
+  }
+  .formDesign {
+    margin: 10px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .formWidth{
+    width: 100%;
+  }
